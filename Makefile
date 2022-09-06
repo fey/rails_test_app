@@ -6,7 +6,7 @@ setup:
 	bin/rails db:fixtures:load
 
 build:
-	bundle install --without production development
-	bundle exec rake assets:precompile
-	bundle exec rake assets:clean
+	bundle install --without test development && \
+	bundle exec rake assets:precompile && \
+	bundle exec rake assets:clean && \
 	bundle exec rake db:migrate
